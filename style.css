@@ -700,4 +700,267 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* ESTILOS ESPECÍFICOS PARA LA PÁGINA DE LISTADO DE PRODUCTOS */
+
+/* Sidebar de Filtros */
+.sidebar-filters {
+    min-height: 80vh; /* Para que la barra lateral tenga un fondo visible */
+    border-radius: 0.5rem;
+}
+
+.sidebar-menu {
+    font-size: 0.95rem;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    color: #495057; /* Texto más oscuro que el predeterminado */
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+}
+
+.sidebar-link:hover {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+}
+
+.sidebar-link.active {
+    background-color: #e9ecef;
+    color: #212529; /* Color de texto más oscuro para el activo */
+    font-weight: 600;
+    border-left: 3px solid #0d6efd; /* Línea de color azul en activo */
+    padding-left: 0.75rem;
+}
+
+/* Bloque de Publicidad (Ad Block) */
+.ad-block {
+    /* Fondo con gradiente simulando la imagen */
+    background: linear-gradient(135deg, #cc3333 0%, #ff6666 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ad-block h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Grid de Productos */
+
+
+/* Tarjeta de Producto */
+.product-card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+    overflow: hidden; /* Para que la imagen respete el borde */
+}
+
+.product-card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+.product-card .card-img-top {
+    height: auto; /* Ajuste para que la imagen se vea completa */
+    object-fit: cover;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.product-fandom {
+    color: #6c757d;
+}
+
+.product-name {
+    min-height: 2.5rem; /* Para alinear el botón aunque el título sea de 1 o 2 líneas */
+    font-size: 0.95rem;
+}
+
+.product-price {
+    color: #dc3545; /* Rojo para el precio como en la imagen */
+    font-size: 1.1rem;
+}
+
+/* Estilos de la cabecera del navbar (ajustados para reflejar la imagen FANDOM-Manga.png) */
+.main-navbar .nav-link {
+    font-weight: 500;
+}
+
+.main-navbar .nav-item .nav-link.active,
+.main-navbar .nav-item .dropdown-toggle:hover {
+    color: #dc3545 !important; /* Color de acento rojo para el elemento activo/hover */
+    font-weight: 600;
+}
+
+
+/* ============ NUEVOS ESTILOS - SOLICITUD DEL USUARIO ============ */
+
+/* OCULTAR TARJETAS PARA EL "MOSTRAR MÁS" */
+.hidden-on-load {
+    display: none !important;
+}
+
+/* BOTÓN MOSTRAR MÁS (LOAD MORE) */
+.load-more-container {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.load-more-container .btn {
+    min-width: 250px;
+    font-weight: 600;
+}
+
+
+/* MODAL DE DETALLES DE PRODUCTO */
+.product-modal-content {
+    border-radius: 1rem;
+    position: relative;
+    padding: 0;
+}
+
+/* Botón de cierre en la esquina superior derecha */
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.modal-close-btn:hover {
+    opacity: 0.9;
+}
+
+.modal-product-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.modal-product-price {
+    font-size: 2.2rem;
+    color: var(--color-primary); /* Rojo */
+}
+
+/* Imagen de producto dentro del modal */
+.product-image-preview {
+    background-color: #f7f7f7;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.product-image-preview img {
+    max-height: 500px;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* Acordeón de detalles (estilo minimalista) */
+.accordion-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-header {
+    margin: 0;
+}
+
+.accordion-button {
+    font-weight: 600;
+    padding: 1rem 0;
+    background-color: #ffffff;
+    color: #222222;
+    box-shadow: none;
+    transition: color 0.2s;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--color-primary);
+}
+
+.accordion-body {
+    padding: 0.5rem 0 1rem 0;
+}
+
+/* Responsive para el modal */
+@media (max-width: 767.98px) {
+    .modal-dialog {
+        margin: 0;
+        min-height: 100vh;
+    }
+    .product-modal-content {
+        min-height: 100vh;
+        border-radius: 0;
+    }
+    .modal-body {
+        padding: 15px !important;
+    }
+    .modal-product-name {
+        font-size: 1.5rem;
+    }
+    .modal-product-price {
+        font-size: 1.8rem;
+    }
+}
+
+/* ANUNCIOS ROTATIVOS */
+.rotating-ad-container {
+    /* Contenedor principal para los anuncios */
+    height: 300px; /* Altura fija para el contenedor */
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.ad-slide {
+    position: absolute;
+    inset: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.ad-slide.active {
+    opacity: 1;
+}
+
+/* Estilos de anuncios de ejemplo */
+.ad-slide:nth-child(1) {
+    background: linear-gradient(135deg, #0d6efd, #004d99); /* Azul */
+}
+
+.ad-slide:nth-child(2) {
+    background: linear-gradient(135deg, #ffc107, #cc9a00); /* Amarillo/Dorado */
+}
+
+.ad-slide:nth-child(3) {
+    background: linear-gradient(135deg, #20c997, #107052); /* Verde/Menta */
+}
+
+.ad-slide h5 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.ad-slide p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+/*MUSICA FANDOM FIN*/
 
